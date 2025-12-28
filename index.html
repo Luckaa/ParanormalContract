@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Carregando Caso Paranormal...</title>
+  <script>
+    // Pega o token da URL: ?token=ABCD
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    if (token && /^[A-Z2-7]{4}$/.test(token)) {
+      // Tenta abrir o app
+      window.location = 'paranormal://case/' + token;
+      
+      // Se não abrir em 2s, redireciona para Play Store
+      setTimeout(() => {
+        window.location = 'https://play.google.com/store/apps/details?id=com.example.paranormalintestigation';
+      }, 2000);
+    } else {
+      alert('Código inválido.');
+    }
+  </script>
+</head>
+<body>
+  <p>Carregando caso...</p>
+</body>
+</html>
