@@ -4,24 +4,26 @@
   <meta charset="utf-8">
   <title>Carregando Caso Paranormal...</title>
   <script>
-    // Pega o token da URL: ?token=ABCD
-    const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get('token');
-
-    if (token && /^[A-Z2-7]{4}$/.test(token)) {
-      // Tenta abrir o app
-      window.location = 'paranormal://case/' + token;
+    // Extrai o token do caminho: /case/AFSS → "AFSS"
+    const path = window.location.pathname; // ex: "/case/AFSS"
+    const match = path.match(/^\/case\/([A-Z2-7]{4})$/i);
+    
+    if (match) {
+      const token = match[1].toUpperCase();
       
-      // Se não abrir em 2s, redireciona para Play Store
+      // Tenta abrir o app
+      window.location.href = 'paranormal://case/' + token;
+      
+      // Fallback para Play Store após 2s
       setTimeout(() => {
-        window.location = 'https://play.google.com/store/apps/details?id=com.example.paranormalintestigation';
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.example.paranormalintestigation';
       }, 2000);
     } else {
-      alert('Código inválido.');
+      alert('Código de caso inválido.');
     }
   </script>
 </head>
 <body>
-  <p>Carregando caso...</p>
+  <p>Carregando caso paranormal...</p>
 </body>
 </html>
