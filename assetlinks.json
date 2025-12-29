@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.paranormalintestigation",
+    "sha256_cert_fingerprints":
+    ["D7:41:F3:6D:50:FC:B5:A1:36:32:96:F8:3F:69:39:E3:27:55:BA:BB:3D:08:31:10:E9:84:EC:F0:AD:55:ED:9B"]
+  }
+}]
