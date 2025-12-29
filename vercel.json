@@ -1,5 +1,8 @@
 {
   "rewrites": [
     { "source": "/case/:token", "destination": "/index.html" }
-  ]
+  ],
+  
+  "outputDirectory": "public"
+
 }
