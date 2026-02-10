@@ -1,29 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Carregando Caso Paranormal...</title>
-  <script>
-    // Extrai o token do caminho: /case/AFSS → "AFSS"
-    const path = window.location.pathname; // ex: "/case/AFSS"
-    const match = path.match(/^\/case\/([A-Z2-7]{4})$/i);
-    
-    if (match) {
-      const token = match[1].toUpperCase();
-      
-      // Tenta abrir o app
-      window.location.href = 'paranormal://case/' + token;
-      
-      // Fallback para Play Store após 2s
-      setTimeout(() => {
-        window.location.href = 'https://play.google.com/store/apps/details?id=com.example.paranormalintestigation';
-      }, 2000);
-    } else {
-      alert('Código de caso inválido.');
-    }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrato Paranormal</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'Creepster', cursive; /* Se quiser fonte parecida com o app */
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 150px;
+    margin-bottom: 30px;
+  }
+
+  button {
+    width: 250px;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1f1f1f;
+    color: #fff;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background-color: #333;
+  }
+
+  .fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #c79e2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+</style>
 </head>
 <body>
-  <p>Carregando caso paranormal...</p>
+
+<h1>CONTRATO PARANORMAL</h1>
+<img src="ghost.png" alt="Logo Fantasma" class="logo">
+
+<button id="scan">ESCANEAR EVIDÊNCIAS - 0/3</button>
+<button id="load">CARREGAR PARTIDA</button>
+
+<div class="fab">📋</div>
+
+<script>
+  document.getElementById('scan').addEventListener('click', () => {
+    alert('Função de escanear evidências ainda não implementada');
+  });
+
+  document.getElementById('load').addEventListener('click', () => {
+    alert('Função de carregar partida ainda não implementada');
+  });
+
+  document.querySelector('.fab').addEventListener('click', () => {
+    alert('Botão flutuante clicado!');
+  });
+</script>
+
 </body>
 </html>
